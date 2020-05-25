@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col" *ngIf="humanSide && whomFirst">
+      <div class="row">
+        <div class="col-4 square p-0">
+          <app-peice
+            [value]="squares[0]"
+            (click)="makeMove(0)">
+          </app-peice>
+        </div>
+        <div class="col-4 square p-0">
+          <app-peice
+            [value]="squares[1]"
+            (click)="makeMove(1)">
+          </app-peice>
+        </div>
+        <div class="col-4 square p-0">
+          <app-peice
+            [value]="squares[2]"
+            (click)="makeMove(2)">
+          </app-peice>
+        </div>
+
+
+        <div class="col-4 square p-0">
+          <app-peice
+            [value]="squares[3]"
+            (click)="makeMove(3)">
+          </app-peice>
+        </div>
+
+        <div class="col-4 square p-0">
+          <app-peice
+            [value]="squares[4]"
+            (click)="makeMove(4)">
+          </app-peice>
+        </div>
+        <div class="col-4 square p-0">
+          <app-peice
+            [value]="squares[5]"
+            (click)="makeMove(5)">
+          </app-peice>
+        </div>
+
+        <div class="col-4 square p-0">
+          <app-peice
+            [value]="squares[6]"
+            (click)="makeMove(6)">
+          </app-peice>
+        </div>
+        <div class="col-4 square p-0">
+          <app-peice
+            [value]="squares[7]"
+            (click)="makeMove(7)">
+          </app-peice>
+        </div>
+        <div class="col-4 square p-0">
+          <app-peice
+            [value]="squares[8]"
+            (click)="makeMove(8)">
+          </app-peice>
+        </div>
+
+      </div>
+    </div>
+    <div class="col" *ngIf="whomFirstText">
+      <div class="row">
+        <div class="col">
+          <h3>{{whomFirstText}}</h3>
+          <h3 class="text-success" *ngIf="gameEnded">{{gameEnded}}</h3>
+
+          <button class="rounded-0 btn btn-lg btn-secondary border border-dark" (click)="newGame()">Reset</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="col" *ngIf="!humanSide">
+      <div class="row">
+        <div class="col">
+          <h3>Pick side !!</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="piece rounded-0 btn btn-lg btn-secondary border border-dark" (click)="pickSide('X')">X</button>
+        </div>
+        <div class="col">
+          <button class="piece rounded-0 btn btn-lg btn-secondary border border-dark" (click)="pickSide('O')">O</button>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="col" *ngIf="humanSide&& !whomFirst">
+      <div class="row">
+        <div class="col">
+          <h3>who's first</h3>
+        </div>
+      </div>
+      <div class="row" *ngIf="!whomFirst">
+        <div class="col">
+          <button class=" rounded-0 btn btn-lg btn-secondary border border-dark" (click)="pickFirst('H')">Human
+          </button>
+        </div>
+        <div class="col">
+          <button class=" rounded-0 btn btn-lg btn-secondary border border-dark" (click)="pickFirst('C')">CPU
+          </button>
+        </div>
+        <div class="col">
+          <button class=" rounded-0 btn btn-lg btn-secondary border border-dark" (click)="pickFirst('R')">Random
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+
+</div>
+<h2 *ngIf="winner">
+  Player {{ winner }} won the game!
+</h2>
+
+
