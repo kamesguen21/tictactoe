@@ -1,4 +1,4 @@
-# Ticktacktoe
+# Tictactoe (sorry about the project name i know its wrong)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
